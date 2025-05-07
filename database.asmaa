@@ -1,0 +1,22 @@
+create database projecttech
+use projecttech
+CREATE TABLE users (
+    id INT identity (1,1) PRIMARY KEY,
+    name VARCHAR(100),
+    email VARCHAR(100),
+    address TEXT
+);
+
+CREATE TABLE orders (
+    id INT identity (1,1) PRIMARY KEY,
+    user_id INT,
+    product_name VARCHAR(255),
+    total_amount DECIMAL(10,2),
+    status VARCHAR(50),
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP
+);
+INSERT INTO users (name, email, address)
+VALUES ('Asmaa Ahmed', 'asmaa@example.com', '26th of July Street.');
+INSERT INTO orders (user_id, product_name, total_amount, status)
+VALUES (1, 'Laptop', 1200.50, 'Pending');
+
